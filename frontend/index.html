@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Staff Next Team Selection</title>
+
+    <!-- give some style to our canvas -->
+    <style>
+      * {
+        margin: 0;
+        overflow: hidden;
+      }
+
+      canvas {
+        background-color: brown;
+      }
+      #overlayDiv {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index:99;
+        justify-content: center;
+        align-items: center;
+        display:none;
+      }
+      #winnerDiv {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index:99;
+        justify-content: center;
+        align-items: center;
+        display:none;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="winnerDiv">
+    <img src="firework.gif" />
+    <img src="firework1.gif" />
+    <img src="firework2.gif" />
+    <img src="firework.gif" />
+    <img src="firework1.gif" />
+    <img src="firework2.gif" />
+    <img src="firework1.gif" />
+    <img src="firework2.gif" />
+  </div>
+  <div id="overlayDiv"><img src="Countdown1.gif" /> </div>
+    <canvas></canvas>
+
+    <!-- scripiting -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="bubble.js"></script>
+  </body>
+</html>
