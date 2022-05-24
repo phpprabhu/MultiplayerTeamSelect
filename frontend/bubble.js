@@ -1,4 +1,4 @@
-const teams = ["NWA", "BMA", "DEVP", "CloudStack", "Website"];
+const teams = ["Backend", "BMA", "Branded Cloud", "CDN", "CloudStack", "Customer Portal", "DEVP", "Shared Hosting", "Website"];
 
 const socket = io('http://127.0.0.1:8000');
 
