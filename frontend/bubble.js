@@ -60,7 +60,7 @@ var game_start = false;
 
         writeText() {
           ctx.beginPath();
-          ctx.font = "30px Arial";
+          ctx.font = "28px Arial";
           ctx.fillStyle = 'white';
           ctx.textAlign = 'center';
           ctx.fillText(this.team, this.x, this.y+3);
@@ -159,13 +159,6 @@ var game_start = false;
         }
       });
 
-function handleGameState(blasted_balls) {
-  if (!gameActive) {
-    return;
-  }
-  console.log(blasted_balls);
-}
-
 
 function handleCurrentState(blasted_balls_state) {
     if(blasted_balls_state.length==0 && document.getElementById("winnerDiv")) {
@@ -186,7 +179,7 @@ function showCountDown() {
     document.getElementById("overlayDiv").style.display = "flex";
     setTimeout(function () {
         document.getElementById("overlayDiv").style.display = "none";
-    }, 3500);
+    }, 3000);
 }
 
 function gameOver() {

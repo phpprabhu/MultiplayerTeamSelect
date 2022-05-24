@@ -28,12 +28,12 @@ io.on('connection', (sock) => {
 
     sock.on('blast_state', (blasted_ball) => {
         if (game_start) {
-            if (!blasted_balls.includes(blasted_ball)) {
-                blasted_balls.push(blasted_ball)
-            }
+            if (blasted_balls.length < no_of_balls - 1) {
+                if (!blasted_balls.includes(blasted_ball)) {
+                    blasted_balls.push(blasted_ball)
+                }
             io.emit('current_state', blasted_balls)
-
-            if (blasted_balls.length == no_of_balls - 1) {
+            } else {
                 io.emit('gameOver', 'winner selected');
             }
         }
@@ -51,7 +51,7 @@ io.on('connection', (sock) => {
         io.emit('current_state', blasted_balls)
         setTimeout(function () {
             game_start = true;
-        }, 3500);
+        }, 3000);
     });
 });
 
