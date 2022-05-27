@@ -6,8 +6,10 @@ socket.on('init', handleCurrentState);
 socket.on('countdown', showCountDown);
 socket.on('gameOver', gameOver);
 socket.on('current_state', handleCurrentState);
+socket.on('players_count', handlePlayersCount);
 
 var blasted_balls = []
+var no_of_players = 0;
 
 const no_of_balls = 500;
 
@@ -185,3 +187,11 @@ function showCountDown() {
 function gameOver() {
     document.getElementById("winnerDiv").style.display = "flex";
 }
+
+function handlePlayersCount(player_count){
+    console.log(player_count);
+    if (document.getElementById("player_count")) {
+        document.getElementById("player_count").innerHTML = player_count;
+    }
+}
+

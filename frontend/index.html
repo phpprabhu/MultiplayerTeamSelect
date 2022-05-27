@@ -27,6 +27,19 @@
         align-items: center;
         display:none;
       }
+      #overlay {
+        position:absolute;
+         top:0;
+         right:0
+        width: 450px;
+        z-index:99;
+        color: white;
+        font-size: 20px;
+        padding:10px;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+      }
       #winnerDiv {
         position: fixed;
         top: 0;
@@ -52,6 +65,7 @@
     <img src="firework2.gif" />
   </div>
   <div id="overlayDiv"><img src="Countdown1.gif" /> </div>
+  <div id="overlay">No. of colleagues connected : <span id="player_count">0</span></div>
     <canvas></canvas>
 
     <!-- scripiting -->

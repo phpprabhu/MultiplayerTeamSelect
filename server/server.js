@@ -10,6 +10,7 @@ const server = http.createServer(app);
 
 var game_start = false;
 var blasted_balls = []
+var clients_connected = 0;
 const no_of_balls = 500;
 
 const io = require("socket.io")(server, {
@@ -23,7 +24,16 @@ const io = require("socket.io")(server, {
  });
 
 io.on('connection', (sock) => {
-    console.log("Someone connected");
+    clients_connected++;
+    console.log("Someone connected" + clients_connected);
+    io.emit('players_count', clients_connected);
+
+    sock.on('disconnect', function(){
+        clients_connected--;
+        io.emit('players_count', clients_connected);
+        console.log(sock.id + ' disconnected');
+    })
+
     sock.emit('init', blasted_balls);
 
     sock.on('blast_state', (blasted_ball) => {
